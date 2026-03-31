@@ -90,6 +90,7 @@ CMAKE_ARGS := \
 	-DCMAKE_C_COMPILER="$(CC)" \
 	-DCMAKE_C_FLAGS="$(CFLAGS)" \
 	-DCMAKE_BUILD_TYPE=Release
+CMAKE_ARGS += -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 # Ruby configure arguments to build
 RUBY_ARGS := \
