@@ -245,7 +245,7 @@ OPTS_PHYSFS := \
 
 OPTS_LIBICONV := \
 	--disable-shared \
-	--enable-static
+	--enable-static \
     ac_cv_func_mbrtowc=no \
     ac_cv_func_wcrtomb=no
 
