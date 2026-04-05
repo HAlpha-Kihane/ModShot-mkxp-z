@@ -452,7 +452,7 @@ $(DLDIR)/$(DLARCH)/libiconv/lib/.libs/libiconv.a: $(DLDIR)/$(DLARCH)/libiconv/Ma
 
 $(DLDIR)/$(DLARCH)/libiconv/Makefile: $(DLDIR)/$(DLARCH)/libiconv/configure.ac
 	@printf "\e[94m=>\e[0m \e[36mConfiguring libiconv...\e[0m\n"
-	@cd $(DLDIR)/$(DLARCH)/libiconv; CFLAGS="-Wno-error $(CFLAGS)"$(CONFIGURE) $(OPTS_LIBICONV)
+	@cd $(DLDIR)/$(DLARCH)/libiconv; CFLAGS="-Wno-error $(CFLAGS)" $(CONFIGURE) $(OPTS_LIBICONV)
 
 $(DLDIR)/$(DLARCH)/libiconv/configure.ac: $(DLDIR)/libiconv-1.17.tar.gz
 	@printf "\e[94m=>\e[0m \e[36mUnpacking GNU iconv...\e[0m\n"
