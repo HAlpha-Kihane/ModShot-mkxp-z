@@ -246,6 +246,8 @@ OPTS_PHYSFS := \
 OPTS_LIBICONV := \
 	--disable-shared \
 	--enable-static
+    ac_cv_func_mbrtowc=no \
+    ac_cv_func_wcrtomb=no
 
 OPTS_UCHARDET := \
 	-DBUILD_STATIC=ON \
@@ -452,14 +454,14 @@ $(DLDIR)/$(DLARCH)/libiconv/Makefile: $(DLDIR)/$(DLARCH)/libiconv/configure.ac
 	@printf "\e[94m=>\e[0m \e[36mConfiguring libiconv...\e[0m\n"
 	@cd $(DLDIR)/$(DLARCH)/libiconv; $(CONFIGURE) $(OPTS_LIBICONV)
 
-$(DLDIR)/$(DLARCH)/libiconv/configure.ac: $(DLDIR)/libiconv-1.18.tar.gz
+$(DLDIR)/$(DLARCH)/libiconv/configure.ac: $(DLDIR)/libiconv-1.17.tar.gz
 	@printf "\e[94m=>\e[0m \e[36mUnpacking GNU iconv...\e[0m\n"
-	@tar -xzf $(DLDIR)/libiconv-1.18.tar.gz -C $(DLDIR)/$(DLARCH)/
-	@mv $(DLDIR)/$(DLARCH)/libiconv-1.18 $(DLDIR)/$(DLARCH)/libiconv
+	@tar -xzf $(DLDIR)/libiconv-1.17.tar.gz -C $(DLDIR)/$(DLARCH)/
+	@mv $(DLDIR)/$(DLARCH)/libiconv-1.17 $(DLDIR)/$(DLARCH)/libiconv
 	@touch $(DLDIR)/$(DLARCH)/libiconv/configure.ac
 
-$(DLDIR)/libiconv-1.18.tar.gz:
-	@printf "\e[94m=>\e[0m \e[36mDownloading GNU iconv 1.18...\e[0m\n"
+$(DLDIR)/libiconv-1.17.tar.gz:
+	@printf "\e[94m=>\e[0m \e[36mDownloading GNU iconv 1.17...\e[0m\n"
 	@wget -q https://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.18.tar.gz -P $(DLDIR)/
 
 # ---------------------------------- uchardet ----------------------------------
